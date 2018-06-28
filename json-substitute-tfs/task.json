@@ -1,0 +1,34 @@
+{
+    "id": "03660828-9EA7-4D56-AB3D-379442CC0E1E",
+    "name": "JsonSubstitute",
+    "friendlyName": "Json Substitute",
+    "description": "Variables substitution for .json configuration files.",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "visibility": [
+        "Release"
+    ],
+    "author": "george.vasilchenko",
+    "version": {
+        "Major": 0,
+        "Minor": 0,
+        "Patch": 1
+    },
+    "inputs": [
+        {
+            "name": "jsonFilePath",
+            "type": "filePath",
+            "label": "Path to Json file",
+            "required": true,
+            "helpMarkDown": "Path to Json file"
+         }
+    ],
+    "instanceNameFormat": "JsonSubstitute",
+    "execution": {
+       "PowerShell": {
+          "target": "$(currentDirectory)\\main.ps1",
+          "argumentFormat": "",
+          "workingDirectory": "$(currentDirectory)"
+       }
+    }
+}
