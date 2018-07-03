@@ -1,20 +1,28 @@
 {
-    "id": "03660828-9EA7-4D56-AB3D-379442CC0E1E",
+    "id": "9175fd51-4f41-459e-8c8d-b01e2b85bdcb",
     "name": "JsonSubstitute",
-    "friendlyName": "Json Substitute",
+    "friendlyName": "Json Substitute 0.0.3",
     "description": "Variables substitution for .json configuration files.",
-    "helpMarkDown": "",
     "category": "Utility",
     "visibility": [
+        "Build",
         "Release"
+    ],
+    "runsOn": [
+        "Agent",
+        "MachineGroup"
     ],
     "author": "george.vasilchenko",
     "version": {
         "Major": 0,
         "Minor": 0,
-        "Patch": 1
+        "Patch": 3
     },
-    "inputs": [
+    "demands": [
+        "npm"
+    ],
+    "minimumAgentVersion": "1.92.0",
+    "inputs":  [
         {
             "name": "jsonFilePath",
             "type": "filePath",
@@ -25,10 +33,10 @@
     ],
     "instanceNameFormat": "JsonSubstitute",
     "execution": {
-       "PowerShell": {
-          "target": "$(currentDirectory)\\main.ps1",
-          "argumentFormat": "",
-          "workingDirectory": "$(currentDirectory)"
-       }
-    }
+        "Node": {
+            "target": "dist/main.js",
+            "argumentFormat": ""
+        }
+    },
+    "messages": {}
 }
